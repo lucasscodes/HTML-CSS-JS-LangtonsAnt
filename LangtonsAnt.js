@@ -1,10 +1,10 @@
 let canvas = document.getElementById("antField");
-let width = 256;
-let height = 256;
+let width = 128;
+let height = 128;
 //y-pos, x-pos, dir (0up, 1right, 2down, 3left)
-let ants = [[height/2, width/2, 0, "Green"],
-			[height/2, width/2, 1, "Black"],
-			[height/2, width/2, 2, "Red"],
+let ants = [[height/2-1, width/2, 0, "Green"],
+			[height/2-1, width/2, 1, "Black"],
+			[height/2, width/2-1, 2, "Red"],
 			[height/2, width/2, 3, "Blue"]];
 //init field with background color
 const background = "#F0FFF0";
