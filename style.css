@@ -28,13 +28,17 @@ html, body {
     
         .slidecontainer {
             width: 100%; /* Width of the outside container */
+            position: relative;
+            left: -10px;
+            top: 6px;
+            
         }
         
         /* The slider itself */
         .slider {
             -webkit-appearance: none;  /* Override default CSS styles */
             appearance: none;
-            width: 95%; /* Full-width */
+            width: 100%; /* Full-width */
             height: 10px; /* Specified height */
             background: #d3d3d3; /* Grey background */
             outline: none; /* Remove outline */
@@ -66,7 +70,7 @@ html, body {
         }
     
         .text {
-            width: 100px;
+            width: 65px;
             border: none;  /* Hide border */
         }
     

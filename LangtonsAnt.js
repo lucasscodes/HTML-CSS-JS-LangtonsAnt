@@ -20,7 +20,7 @@ function draw(verbose=false) {
     if (canvas.getContext) {
         let ctx = canvas.getContext('2d');
 		ctx.canvas.width = window.innerWidth;
-		ctx.canvas.height = window.innerHeight-200;
+		ctx.canvas.height = window.innerHeight*.9;
         let cellWidth = canvas.width / width;
         let cellHeight = canvas.height / height;
 
@@ -96,7 +96,7 @@ function main() {
 		if (!paused) {
 			paused = true;
 			clearInterval(simInterval);
-			rateText.value = "Rate 0";
+			rateText.value = "Rate: 0";
 			toggle.value = "Resume";
 			slider.value = 0;
 			slider.disable = true;
@@ -107,7 +107,7 @@ function main() {
 				step();
 			}, 1000/rate);
 			simInterval;
-			rateText.value = "Rate "+rate;
+			rateText.value = "Rate: "+rate;
 			toggle.value = "Pause";
 			slider.value = rate;
 		};
