@@ -1,11 +1,13 @@
 let canvas = document.getElementById("antField");
 let width = 128;
 let height = 128;
+let rate = 100;
 //y-pos, x-pos, dir (0up, 1right, 2down, 3left)
-let ants = [[height/2-1, width/2, 0, "Green"],
-			[height/2-1, width/2, 1, "Black"],
-			[height/2, width/2-1, 2, "Red"],
-			[height/2, width/2, 3, "Blue"]];
+let ants = [[height/2, width/2, 0, "Green"],
+			[height/2, width/2, 1, "Black"],
+			[height/2, width/2, 2, "Red"],
+			[height/2, width/2, 3, "Blue"]
+		   ];
 //init field with background color
 const background = "#F0FFF0";
 let field = new Array(height);
@@ -17,6 +19,8 @@ for(let i=0; i<height; i++){
 function draw(verbose=false) {
     if (canvas.getContext) {
         let ctx = canvas.getContext('2d');
+		ctx.canvas.width = window.innerWidth;
+		ctx.canvas.height = window.innerHeight-200;
         let cellWidth = canvas.width / width;
         let cellHeight = canvas.height / height;
 
@@ -39,7 +43,7 @@ function step() {
 		dir += field[y][x]===background?1:3;
 		dir %= 4;
 		//flip field
-		field[y][x] = field[y][x]===col?background:col;
+		field[y][x] = (field[y][x]===background)?col:background;
 		//move
 		if (dir===0) y += height-1;
 		if (dir===1) x += 1;
@@ -55,7 +59,7 @@ function main() {
 	let title = document.getElementById("title");
 	title.value = "HTML+CSS+Javascript: Simulation of Langtons-Ant";
 	let slider = document.getElementById("simRate");
-	let rate = slider.value;
+	slider.value = rate;
 	let rateText = document.getElementById("rateField");
 	let toggle = document.getElementById("toggle");
 	toggle.value = "Pause";

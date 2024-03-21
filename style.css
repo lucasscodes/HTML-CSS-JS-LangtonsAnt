@@ -1,4 +1,12 @@
+html, body {
+    width:  100%;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
 .container {
+
     .title {
         display: flex;
         margin: auto;
@@ -26,7 +34,7 @@
         .slider {
             -webkit-appearance: none;  /* Override default CSS styles */
             appearance: none;
-            width: 98%; /* Full-width */
+            width: 95%; /* Full-width */
             height: 10px; /* Specified height */
             background: #d3d3d3; /* Grey background */
             outline: none; /* Remove outline */
@@ -58,7 +66,7 @@
         }
     
         .text {
-            size: auto;
+            width: 100px;
             border: none;  /* Hide border */
         }
     
